@@ -52,7 +52,7 @@ rd3.pack(side=LEFT)
 def submit():
     tkinter.messagebox.showinfo("Player info", "Welcome to the game!")
 
-btn = Button(win, text="continue", width = 10, height=3, command=submit)
+btn = Button(win, text="continue", width = 10, height=2, command=submit)
 btn.grid(row=2)
 
 win.mainloop() #running the loop that works as a trigger
