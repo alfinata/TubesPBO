@@ -57,8 +57,3 @@ class warriorRole(heroRole):
 
     def triggerPassiveRage(self):
         print("Passive Rage triggered")
-
-
-
-role1 = mageRole()
-print(role1.checkRole())

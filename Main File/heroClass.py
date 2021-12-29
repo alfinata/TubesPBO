@@ -8,15 +8,15 @@ class basicHero(basicUnit):
         self.energyCurrent = self.energyMax
         self.money = money
         self.heroRole = heroRole
+        self.inventory = Inventory([], [], [])
         
     def equipWeapon(self, weapon):
         self.weapon = weapon
         self.setATK(weapon.ATKBonus)
 
     def equipArmor(self, armor):
-        self.armor = armor
-        lastHP = self.getHP
-        self.changeMaxHP()
+        self.changeMaxHP(100+armor.HPBonus)
+        self.setDEF(armor.DEFBonus)
         
 # Class Inventory - Rafif
 class Inventory:

@@ -13,10 +13,10 @@ class human:
 class student(human):
     def __init__(self, name, grade):
         super().__init__(name)
-        self.__grade = grade
+        self.grade = grade
     
     def scores(self):
-        print(f"my score is {self.__grade}")
+        print(f"my score is {self.grade}")
 
 class firstGrader(student):
     def __init__(self, name, grade, kelas):
@@ -38,4 +38,4 @@ jojo = firstGrader("jojo", 90, "IF32")
 dio = student("dio", 80)
 uuf = teacher("hahaah")
 uuf.showSalary()
-print(dio.__grade)
+print(dio.grade)

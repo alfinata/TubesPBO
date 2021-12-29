@@ -12,8 +12,11 @@ class basicUnit:
     def getName(self):
         return self.__name
 
-    def getHP(self):
+    def getHPCurrent(self):
         return self.__HPCurrent
+
+    def getHPMax(self):
+        return self.__HPMax
 
     def setHPCurrent(self, newHP):
         self.__HPCurrent = newHP
