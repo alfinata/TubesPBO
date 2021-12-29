@@ -21,9 +21,9 @@ file_menu.add_separator()
 file_menu.add_command(label='Exit', command=win.quit) 
 
 help_menu = Menu(mn, tearoff=0) 
-mn.add_cascade(label='Help', menu=help_menu) 
-help_menu.add_command(label='Feedback') 
-help_menu.add_command(label='Contact') 
+mn.add_cascade(label='Help', menu=help_menu)
+help_menu.add_command(label='Feedback')
+help_menu.add_command(label='Contact')
 
 # Input Nama
 nameFrame = Frame(win)
