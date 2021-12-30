@@ -14,7 +14,8 @@ def main():
     print(f"Hero HP is {playerHero.getHPCurrent()}/{playerHero.getHPMax()}")
     print(f"Hero defense is {playerHero.getDEF()}")
     print(f"Hero dodge chance is {playerHero.getEvade()}")
-    print(f"Hero energy is {playerHero.energyCurrent}/{playerHero.energyMax}\n")
+    print(f"Hero energy is {playerHero.energyCurrent}/{playerHero.energyMax}")
+    print(f"Hero role is {playerHero.heroRole.checkRole()}\n")
 
     print("Hero takes 10 dmg")
     playerHero.setHPCurrent(90)
@@ -27,8 +28,11 @@ def main():
     armor1 = Armor("Leather Armor", 10, "Warrior", 25, 10)
     playerHero.equipArmor(armor1)
     print(f"Hero defense is {playerHero.getDEF()}")
-    print(f"Hero HP is {playerHero.getHPCurrent()}/{playerHero.getHPMax()}")
+    print(f"Hero HP is {playerHero.getHPCurrent()}/{playerHero.getHPMax()}\n")
 
-    
+    enemy1 = slime("Slime1", 20, 10, 0)
+    enemy1.attackTarget(playerHero)
+    print(f"Hero HP is {playerHero.getHPCurrent()}/{playerHero.getHPMax()}\n")
+
 
 main()

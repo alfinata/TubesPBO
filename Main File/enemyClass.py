@@ -3,18 +3,18 @@ from basicClass import basicUnit
 # Class Slime - Alfinata
 class slime(basicUnit):
     def __init__(self, name, HPMax, ATK, DEF):
-        super().__init__(self, name, HPMax, ATK, DEF)
+        super().__init__(name, HPMax, ATK, DEF)
 
 # Class Goblin - Din
 class goblin(basicUnit):
     def __init__(self, name, HPMax, ATK, DEF):
-        super().__init__(self, name, HPMax, ATK, DEF)
+        super().__init__(name, HPMax, ATK, DEF)
 
 
 # Class Skeleton - Din
 class skeleton(basicUnit):
     def __init__(self, name, HPMax, ATK, DEF):
-        super().__init__(self, name, HPMax, ATK, DEF)
+        super().__init__(name, HPMax, ATK, DEF)
     
     def dodge(self):
         print("Dodge")
@@ -22,7 +22,7 @@ class skeleton(basicUnit):
 # Class Vampire - Din
 class vampire(basicUnit):
     def __init__(self, name, HPMax, ATK, DEF):
-        super().__init__(self, name, HPMax, ATK, DEF)
+        super().__init__(name, HPMax, ATK, DEF)
     
     def lifesteal(self):
         print("LiveSteal")
@@ -30,7 +30,7 @@ class vampire(basicUnit):
 # Class Demon - Din
 class demon(basicUnit):
     def __init__(self, name, HPMax, ATK, DEF):
-        super().__init__(self, name, HPMax, ATK, DEF)
+        super().__init__(name, HPMax, ATK, DEF)
     
     def burn(self):
         print("Burn")
@@ -38,7 +38,7 @@ class demon(basicUnit):
 # Class BigSlime - Din
 class bigslime(slime):
     def __init__(self, name, HPMax, ATK, DEF):
-        super().__init__(self, name, HPMax, ATK, DEF)
+        super().__init__(name, HPMax, ATK, DEF)
     
     def quake(self):
         print("quake")
@@ -46,7 +46,7 @@ class bigslime(slime):
 # Class Orc - Din
 class orc(goblin):
     def __init__(self, name, HPMax, ATK, DEF):
-        super().__init__(self, name, HPMax, ATK, DEF)
+        super().__init__(name, HPMax, ATK, DEF)
 
     def block(self):
         print("block")
@@ -54,7 +54,7 @@ class orc(goblin):
 # Class Skeleton Knight - Din
 class skeletonknight(skeleton):
     def __init__(self, name, HPMax, ATK, DEF):
-        super().__init__(self, name, HPMax, ATK, DEF)
+        super().__init__(name, HPMax, ATK, DEF)
 
     def reflect(self):
         print("reflect")
@@ -62,7 +62,7 @@ class skeletonknight(skeleton):
 # Class Vampire Price - Din
 class vampireprince(vampire):
     def __init__(self, name, HPMax, ATK, DEF):
-        super().__init__(self, name, HPMax, ATK, DEF)
+        super().__init__(name, HPMax, ATK, DEF)
     
     def summon(self):
         print("summon")
@@ -70,7 +70,7 @@ class vampireprince(vampire):
 # Class Demon King
 class demonking(demon):
     def __init__(self, name, HPMax, ATK, DEF):
-        super().__init__(self, name, HPMax, ATK, DEF)
+        super().__init__(name, HPMax, ATK, DEF)
 
     def revive(self):
         print("revive")

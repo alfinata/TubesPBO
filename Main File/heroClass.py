@@ -9,6 +9,7 @@ class basicHero(basicUnit):
         self.money = money
         self.heroRole = heroRole
         self.inventory = Inventory([], [], [])
+        self.critChance = 0
         
     def equipWeapon(self, weapon):
         self.weapon = weapon

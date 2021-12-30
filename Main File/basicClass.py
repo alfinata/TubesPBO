@@ -48,10 +48,13 @@ class basicUnit:
         return self.__evade
     
     def attackTarget(self, target):
-        HPnow = target.getHP()
-        damage = self.__ATK*(100-target.getDEF())
+        target.takeDamage(self.__ATK)
+
+    def takeDamage(self, value):
+        HPnow = self.getHPCurrent()
+        damage = value*((100-self.getDEF())/100)
         HPthen = HPnow - damage
-        target.setHPCurrent(HPthen)
+        self.setHPCurrent(HPthen)
 
 # Class Basic Item - Alfinata
 class basicItem:

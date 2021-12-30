@@ -6,6 +6,9 @@ class Equipment(basicItem):
         super().__init__(name, price)
         self.classRole = classRole
 
+    def specialEffects(self):
+        pass
+
 # Class Armor - Rafif
 class Armor(Equipment):
     def __init__(self, name, price, classRole, HPBonus, DEFBonus):
