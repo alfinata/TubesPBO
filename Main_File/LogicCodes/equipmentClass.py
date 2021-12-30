@@ -1,4 +1,4 @@
-from basicClass import basicItem
+from LogicCodes.basicClass import basicItem
 
 # Class Equipment - Rafif
 class Equipment(basicItem):

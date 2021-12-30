@@ -24,7 +24,7 @@ class mageRole(heroRole):
         print("Arcane Mastery triggered")
 
 # Class Assassin Role - Din
-class assassinSkillSet(heroRole):
+class assassinRole(heroRole):
     def __init__(self):
         super().__init__("Assassin")
 

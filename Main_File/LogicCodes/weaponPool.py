@@ -1,4 +1,4 @@
-from equipmentClass import *
+from LogicCodes.equipmentClass import *
 
 # Values ( name, price, class, damage )
 

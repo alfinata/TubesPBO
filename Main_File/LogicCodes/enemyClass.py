@@ -1,4 +1,4 @@
-from basicClass import basicUnit
+from LogicCodes.basicClass import basicUnit
 
 # Class Slime - Alfinata
 class slime(basicUnit):

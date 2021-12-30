@@ -1,4 +1,4 @@
-from basicClass import basicItem
+from LogicCodes.basicClass import *
 
 # Class Consumable - Rafif
 class Consumables(basicItem):
