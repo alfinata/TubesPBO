@@ -17,3 +17,17 @@ medAssassinWeapon = Weapon("Sharp Shortsword", 10, "Assassin", 15)
 higAssassinWeapon = Weapon("Iron Machete", 20, "Assassin", 20)
 endAssassinWeapon = Weapon("Mithril Sabre", 30, "Assassin", 25)
 
+# lowWarriorArmor = Armor("Leather Armor", 0, "Warrior", 12)
+# medWarriorArmor = Armor("Stone Armor", 10, "Warrior", 18)
+# higWarriorArmor = Armor("Iron Armor", 20, "Warrior", 24)
+# endWarriorArmor = Armor("Guardian Armor", 30, "Warrior", 30)
+
+# lowMageArmor = Armor("Wooden Staff", 0, "Mage", 8)
+# medMageArmor = Armor("Stone Wand", 10, "Mage", 12)
+# higMageArmor = Armor("Hardwood Grimoire", 20, "Mage", 16)
+# endMageArmor = Armor("Ruby Magic Book", 30, "Mage", 20)
+
+# lowAssassinArmor = Armor("Leather Breastplate", 0, "Assassin", 10)
+# medAssassinArmor = Armor("", 10, "Assassin", 15)
+# higAssassinArmor = Armor("Iron Machete", 20, "Assassin", 20)
+# endAssassinArmor = Armor("Mithril Sabre", 30, "Assassin", 25)

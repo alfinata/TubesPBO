@@ -54,6 +54,8 @@ class basicUnit:
         HPnow = self.getHPCurrent()
         damage = value*((100-self.getDEF())/100)
         HPthen = HPnow - damage
+        if HPthen < 0:
+            HPthen = 0
         self.setHPCurrent(HPthen)
 
 # Class Basic Item - Alfinata

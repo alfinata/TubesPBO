@@ -2,8 +2,8 @@ from LogicCodes.basicClass import basicUnit
 
 # Class Slime - Alfinata
 class slime(basicUnit):
-    def __init__(self, name, HPMax, ATK, DEF):
-        super().__init__(name, HPMax, ATK, DEF)
+    def __init__(self):
+        super().__init__("Slime", 20, 60, 0)
 
 # Class Goblin - Din
 class goblin(basicUnit):
