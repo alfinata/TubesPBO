@@ -3,14 +3,12 @@ from LogicCodes.consumablesClass import *
 
 # Class Basic Hero - Alfinata
 class basicHero(basicUnit):
-    def __init__(self, name, HPMax, ATK, DEF, money, heroRole):
-        super().__init__(name, HPMax, ATK, DEF)
-        self.energyMax = 100
+    def __init__(self, name, HP, energy, role, evasion):
+        super().__init__(name, HP, 0, 0, 10, evasion, 5)
+        self.energyMax = energy
         self.energyCurrent = self.energyMax
-        self.money = money
-        self.heroRole = heroRole
+        self.heroRole = role
         self.inventory = Inventory()
-        self.critChance = 0
         
     def equipWeapon(self, weapon):
         self.weapon = weapon
@@ -19,6 +17,28 @@ class basicHero(basicUnit):
     def equipArmor(self, armor):
         self.changeMaxHP(100+armor.HPBonus)
         self.setDEF(armor.DEFBonus)
+
+    def useEnergy(self, value):
+        self.energyCurrent = self.energyCurrent - value
+
+    def showInfo(self):
+        print(f"{self.heroRole.checkRole()} {self.getName()}")
+        print(f"HP: {self.getHPCurrent()}/{self.getHPMax()}")
+        print(f"Energy: {self.energyCurrent}/{self.energyMax}")
+        print(f"Attack Power: {self.getATK()}")
+        print(f"Defense Power: {self.getDEF()}")
+        print(f"Critical Chance: {self.critChance}")
+        print(f"Evasion: {self.getEvade()}")
+
+    def showHeroInfo(self):
+        print(f"{self.heroRole.checkRole()} {self.getName()}")
+        print(f"HP: {self.getHPCurrent()}/{self.getHPMax()}")
+        print(f"Energy: {self.energyCurrent}/{self.energyMax}")
+        print(f"Attack Power: {self.getATK()}")
+        print(f"Defense Power: {self.getDEF()}")
+        print(f"Critical Chance: {self.critChance}")
+        print(f"Evasion: {self.getEvade()}")
+        print(f"Money: {self.money}")
         
 # Class Inventory - Rafif
 class Inventory:

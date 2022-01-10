@@ -1,10 +1,17 @@
-from cliUI.loginCLI import gameLogin
-from cliUI.combatCLI import gameCombat
+from cliUI.loginCLI import *
+from cliUI.combatCLI import *
+from cliUI.mainMenuCLI import *
 from LogicCodes.enemyClass import *
 from LogicCodes.equipmentPool import *
+from LogicCodes.heroClass import *
+from LogicCodes.heroRole import *
 
-a = gameLogin()
+# a = gameLogin()
 
-e = slime()
+a = basicHero("Test Hero", 120, 100, mageRole(), 0)
 a.equipWeapon(lowMageWeapon)
-gameCombat(a, e)
+gameMenu(a)
+
+# e = slime()
+
+# gameCombat(a, e)

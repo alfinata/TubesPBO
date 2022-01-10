@@ -28,6 +28,7 @@ def gameShop(hero, weaponPool, armorPool):
                 print("2. Stone Sword")
                 print("3. Steel Spear")
                 print("4. Emerald Claymore")
+                input()
             i = 1
         elif shopSelect == "2":
             i = 0
@@ -60,7 +61,7 @@ def gameShop(hero, weaponPool, armorPool):
                 print("1. Wooden Staff")
                 print("2. Stone Wand")
                 print("3. Hardwood Grimoire")
-                print("4. Ruby Magic Book"))
+                print("4. Ruby Magic Book")
             i = 1
 
         #weapon ASSASIN

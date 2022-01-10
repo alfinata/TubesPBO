@@ -1,5 +1,6 @@
 import os
 from LogicCodes.basicClass import *
+from LogicCodes.heroRole import *
 
 # CLI Combat - Alfinata
 def gameCombat(hero, enemy):
@@ -13,41 +14,71 @@ def gameCombat(hero, enemy):
             while exitStatus == 0:
                 os.system('cls' if os.name == 'nt' else 'clear')
                 print("======================================\n")
-                print(f"{hero.heroRole.checkRole()} {hero.getName()}")
-                print(f"Hero HP: {hero.getHPCurrent()}/{hero.getHPMax()}")
-                print(f"Attack Power: {hero.getATK()}")
-                print(f"Defense Power: {hero.getDEF()}\n")
-                print("======================================\n")
-                print(f"Enemy: {enemy.getName()}")
-                print(f"Enemy HP: {enemy.getHPCurrent()}/{enemy.getHPMax()}")
-                print(f"Attack Power: {enemy.getATK()}")
-                print(f"Defense Power: {enemy.getDEF()}\n")
-                print("======================================\n")
+                hero.showInfo()
+                print("\n======================================\n")
+                enemy.showInfo()
+                print("\n======================================\n")
                 print("Actions")
                 print("1. Attack")
-                toDo = input("Press the keys to continue >> ")
+                print("2. Skill")
+                toDo = input("\nPress the keys to continue >> ")
                 if toDo == "1":
-                    enemyHPThen = enemy.getHPCurrent()
-                    hero.attackTarget(enemy)
-                    enemyHPNow = enemy.getHPCurrent()
                     os.system('cls' if os.name == 'nt' else 'clear')
                     print("======================================\n")
-                    print(f"{hero.getName()} attacked {enemy.getName()}, dealing {enemyHPThen-enemyHPNow} damage.")
-                    print(f"Enemy: {enemy.getName()}")
-                    print(f"Enemy HP: {enemy.getHPCurrent()}/{enemy.getHPMax()}")
+                    hero.attackTarget(enemy)
+                    print("\n======================================\n")
+                    enemy.showInfo()
                     input("<<Press enter to continue>>")
                     exitStatus = 1
+                elif toDo == "2":
+                    skillChosen = 0
+                    while skillChosen == 0:
+                        os.system('cls' if os.name == 'nt' else 'clear')
+                        print("======================================\n")
+                        hero.showInfo()
+                        print("\n======================================\n")
+                        enemy.showInfo()
+                        print("\n======================================\n")
+                        print("Your skills:")
+                        hero.heroRole.showAbilities()
+                        print("3. Cancel")
+                        skillInput = input("\nPress the keys to continue >> ")
+                        if skillInput == "1":
+                            os.system('cls' if os.name == 'nt' else 'clear')
+                            print("======================================\n")
+                            if hero.heroRole.manaCost1 <= hero.energyCurrent:
+                                hero.heroRole.doAbility1(hero, enemy)
+                                skillChosen = 1
+                                exitStatus = 1
+                            else:
+                                print("Not enough energy")
+                            print("\n======================================\n")
+                            enemy.showInfo()
+                            input("<<Press enter to continue>>")
+                        elif skillInput == "2":
+                            os.system('cls' if os.name == 'nt' else 'clear')
+                            print("======================================\n")
+                            if hero.heroRole.manaCost2 <= hero.energyCurrent:
+                                hero.heroRole.doAbility2(hero, enemy)
+                                skillChosen = 1
+                                exitStatus = 1
+                            else:
+                                print("Not enough energy")
+                            print("\n======================================\n")
+                            enemy.showInfo()
+                            input("<<Press enter to continue>>")
+                        elif skillInput == "3":
+                            skillChosen = 1
+                        else:
+                            pass
                 else:
                     pass
         else:
             os.system('cls' if os.name == 'nt' else 'clear')
             print("======================================\n")
-            myHPThen = hero.getHPCurrent()
             enemy.attackTarget(hero)
-            myHPNow = hero.getHPCurrent()
-            print(f"{enemy.getName()} attacked {hero.getName()}, dealing {myHPThen-myHPNow} damage.\n")
-            print(f"{hero.heroRole.checkRole()} {hero.getName()}")
-            print(f"Hero HP: {hero.getHPCurrent()}/{hero.getHPMax()}")
+            print("======================================\n")
+            hero.showInfo()
             input("<<Press enter to continue>>")
         if hero.getHPCurrent() == 0:
             battleFinished = 1
@@ -60,7 +91,13 @@ def gameCombat(hero, enemy):
     print("======================================\n")
     if whoWin == 1:
         print(f"Congratulations, you beat {enemy.getName()}")
-        print(f"You get 20 gold after looting the enemy.")
+        print(f"You get {enemy.money} gold after looting the enemy.")
+        hero.money += enemy.money
+        input("<<Press enter to continue>>")
+        return 0
     elif whoWin == 2:
         print(f"Oh no! You got beaten by {enemy.getName()}")
-    input("<<Press enter to continue>>")
+        print("\n======================================\n")
+        print("GAME OVER")
+        print("\n======================================\n")
+        return 1

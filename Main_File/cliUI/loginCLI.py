@@ -21,17 +21,18 @@ def gameLogin():
         roleInput = input("Press the keys to continue >> ")
         if roleInput == "1":
             heroRole = warriorRole()
+            playerHero = basicHero(heroName, 120, 100, heroRole, 0)
             i = 1
         elif roleInput == "2":
             heroRole = mageRole()
+            playerHero = basicHero(heroName, 100, 120, heroRole, 0)
             i = 1
         elif roleInput == "3":
             heroRole = assassinRole()
+            playerHero = basicHero(heroName, 100, 100, heroRole, 10)
             i = 1
         else:
             pass
-    
-    playerHero = basicHero(heroName, 100, 0, 0, 10, heroRole)
 
     os.system('cls' if os.name == 'nt' else 'clear')
     print("======================================\n")
