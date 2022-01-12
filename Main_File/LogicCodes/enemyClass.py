@@ -6,15 +6,20 @@ class basicEnemy(basicUnit):
         super().__init__(name, HP, ATK, DEF, money, evade, critChance)
         self.abilityCounter = 5
 
+# Class Dummy - Alfinata
+class dummyTarget(basicEnemy):
+    def __init__(self):
+        super().__init__("Dummy Target", 999, 0, 0, 0, 0, 0)
+
 # Class Slime - Alfinata
 class slime(basicEnemy):
     def __init__(self):
-        super().__init__("Slime", 30, 12, 0, 8, 0, 5)
+        super().__init__("Slime", 20, 6, 0, 5, 0, 5)
 
 # Class Goblin - Din
 class goblin(basicUnit):
     def __init__(self):
-        super().__init__("Goblin", 50, 20, 5, 16, 0, 5)
+        super().__init__("Goblin", 30, 10, 10, 10, 0, 5)
 
 
 # # Class Skeleton - Din

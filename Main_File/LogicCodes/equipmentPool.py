@@ -17,7 +17,6 @@ higAssassinWeapon = Weapon("Iron Machete", 20, "Assassin", 20)
 endAssassinWeapon = Weapon("Mithril Sabre", 30, "Assassin", 25)
 
 # Armor Values
-
 lowWarriorArmor = Armor("Leather Armor", 0, "Warrior", 0, 0)
 medWarriorArmor = Armor("Stone Armor", 10, "Warrior", 36, 10)
 higWarriorArmor = Armor("Iron Armor", 20, "Warrior", 72, 15)

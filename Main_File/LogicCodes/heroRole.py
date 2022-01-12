@@ -33,9 +33,7 @@ class mageRole(heroRole):
 
     def doAbility2(self, hero, target):
         hero.useEnergy(self.manaCost2)
-        if target.getDEF() >= 0:
-            changeDEF = (target.getDEF() + 20)*-1
-            target.setDEF(changeDEF)
+        target.setDEF(target.getDEF() - 30)
         print(f"Enemy weakened! {target.getName()} defense has been lowered to {target.getDEF()}")
 
 # Class Assassin Role - Din
@@ -44,19 +42,19 @@ class assassinRole(heroRole):
         super().__init__("Assassin", 20, 10)
 
     def showAbilities(self):
-        print(f"1. Lifesteal - Attack with 50% lifesteal (20 energy)")
+        print(f"1. Lifesteal - Attack with lifesteal (20 energy)")
         print(f"2. Phantom - Increase critical chance (10 energy)")
 
     def doAbility1(self, hero, target):
         hero.useEnergy(self.manaCost1)
         dmgTaken = target.takeDamage(hero.getATK())
-        hero.healHP(dmgTaken/2)
+        hero.healHP(dmgTaken)
         print(f"Lifesteal done succesfully! {target.getName()} suffers {dmgTaken} damage, ")
-        print(f"and {hero.getName()} heals {dmgTaken/2} HP.")
+        print(f"and {hero.getName()} heals {dmgTaken} HP.")
 
     def doAbility2(self, hero, target):
         hero.useEnergy(self.manaCost2)
-        hero.critChance = round(hero.critChance + ((100 - hero.critChance) * 25/100), 2)
+        hero.critChance = round(hero.critChance + ((100 - hero.critChance) * 25/100), 0)
         print(f"{hero.getName()} succesfully used phantom.")
         print(f"His critical chance is now {hero.critChance}%")
         
@@ -80,5 +78,5 @@ class warriorRole(heroRole):
         inverse = 100 - baseDEF
         added = inverse * 15/100
         increasedDEF = baseDEF + added
-        hero.setDEF(round(increasedDEF, 2))
+        hero.setDEF(round(increasedDEF, 0))
         print(f"Guard stance is activated! {hero.getName()} defense has been increased to {increasedDEF}")

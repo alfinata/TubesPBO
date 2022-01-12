@@ -10,7 +10,7 @@ def gameMenu(hero):
     loseCondition = 0
     while loseCondition == 0:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("======================================")
+        print("============= MAIN MENU ==============")
         hero.showHeroInfo()
         print("======================================")
         print("Menu selection:")
@@ -26,7 +26,7 @@ def gameMenu(hero):
             testing_slime = slime()
             roundNow = 1
             endGameCondition, hero = gameCombat(hero, testing_slime, roundNow)
-
+        
         # Enter Shop
         elif menuInput == "2":
             if(hero.heroRole.checkRole() == "Mage"):
@@ -39,7 +39,7 @@ def gameMenu(hero):
         # Show Inventory
         elif menuInput == "3":
             os.system('cls' if os.name == 'nt' else 'clear')
-            print("======================================")
+            print("============= INVENTORY ==============")
             print(f"Money : {hero.money} Gold")
             print(f"Weapon : {hero.weapon.getName()} (Attack Power : {hero.getATK()})")
             print(f"Armor : {hero.armor.getName()} (Defense Power : {hero.getDEF()}%) (HP Bonus : {hero.armor.HPBonus})")
@@ -56,7 +56,7 @@ def gameMenu(hero):
             innPrice = 25
             while i == 0:
                 os.system('cls' if os.name == 'nt' else 'clear')
-                print("======================================")
+                print("=========== TAKE A REST ==============")
                 print(f"Current Money : {hero.money} Gold")
                 print(f"The Inn Price will be {innPrice} Gold:")
                 print("1. Pay")
@@ -66,23 +66,23 @@ def gameMenu(hero):
                     if hero.money >= innPrice:
                         hero.money -= innPrice
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("=========== TAKE A REST ==============")
                         print(f"You have successfully paid for your room, you only have {hero.money} Gold left.")
                         input("\nPress enter to take a rest >> ")
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("=========== TAKE A REST ==============")
                         print("Currently sleeping.")
                         time.sleep(1)
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("=========== TAKE A REST ==============")
                         print("Currently sleeping..")
                         time.sleep(1)
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("=========== TAKE A REST ==============")
                         print("Currently sleeping...")
                         time.sleep(1)
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("=========== TAKE A REST ==============")
                         print("Finished sleeping.")
                         hero.healHP(999)
                         hero.restoreEnergy(120)

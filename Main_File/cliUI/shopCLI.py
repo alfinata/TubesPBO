@@ -6,7 +6,7 @@ def gameShop(hero, weaponPool, armorPool):
     exitShopStatus = 0
     while exitShopStatus == 0:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("======================================")
+        print("=========== GENERAL SHOP =============")
         print(f"Money: {hero.money} Gold")
         print("======================================")
         print("Welcome to the shop:")
@@ -21,7 +21,7 @@ def gameShop(hero, weaponPool, armorPool):
             j = 0
             while j == 0:
                 os.system('cls' if os.name == 'nt' else 'clear')
-                print("======================================")
+                print("=========== WEAPON SHOP ==============")
                 print(f"Current Weapon: {hero.weapon.getName()} (Damage: {hero.weapon.ATKBonus})")
                 print(f"Money: {hero.money} Gold")
                 print("======================================")
@@ -36,14 +36,14 @@ def gameShop(hero, weaponPool, armorPool):
                         hero.equipWeapon(weaponPool[1])
                         hero.money = hero.money - weaponPool[1].getPrice()
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("=========== WEAPON SHOP ==============")
                         print(f"{hero.weapon.getName()} successfully purchased.")
                         print(f"Previous Attack Power: {lateATK}")
                         print(f"New Attack Power: {hero.getATK()}")
                         input("\nPress enter to continue >> ")
                     else:
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("=========== WEAPON SHOP ==============")
                         print("Insufficient amount of money.")
                         print(f"Weapon Price: {weaponPool[1].getPrice()} Gold")
                         print(f"Money: {hero.money} Gold")
@@ -55,14 +55,14 @@ def gameShop(hero, weaponPool, armorPool):
                         hero.equipWeapon(weaponPool[2])
                         hero.money = hero.money - weaponPool[2].getPrice()
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("=========== WEAPON SHOP ==============")
                         print(f"{hero.weapon.getName()} successfully purchased.")
                         print(f"Previous Attack Power: {lateATK}")
                         print(f"New Attack Power: {hero.getATK()}")
                         input("\nPress enter to continue >> ")
                     else:
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("=========== WEAPON SHOP ==============")
                         print("Insufficient amount of money.")
                         print(f"Weapon Price: {weaponPool[2].getPrice()} Gold")
                         print(f"Money: {hero.money} Gold")
@@ -74,14 +74,14 @@ def gameShop(hero, weaponPool, armorPool):
                         hero.equipWeapon(weaponPool[3])
                         hero.money = hero.money - weaponPool[3].getPrice()
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("=========== WEAPON SHOP ==============")
                         print(f"{hero.weapon.getName()} successfully purchased.")
                         print(f"Previous Attack Power: {lateATK}")
                         print(f"New Attack Power: {hero.getATK()}")
                         input("\nPress enter to continue >> ")
                     else:
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("=========== WEAPON SHOP ==============")
                         print("Insufficient amount of money.")
                         print(f"Weapon Price: {weaponPool[3].getPrice()} Gold")
                         print(f"Money: {hero.money} Gold")
@@ -97,7 +97,7 @@ def gameShop(hero, weaponPool, armorPool):
             j = 0
             while j == 0:
                 os.system('cls' if os.name == 'nt' else 'clear')
-                print("======================================")
+                print("============= ARMOR SHOP =============")
                 print(f"Current Armor: {hero.armor.getName()} (Defense Bonus: {hero.armor.DEFBonus}%) (HP Bonus: {hero.armor.HPBonus})" )
                 print(f"Money: {hero.money} Gold")
                 print("======================================")
@@ -113,7 +113,7 @@ def gameShop(hero, weaponPool, armorPool):
                         hero.equipArmor(armorPool[1])
                         hero.money = hero.money - armorPool[1].getPrice()
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("============= ARMOR SHOP =============")
                         print(f"{hero.armor.getName()} successfully purchased.")
                         print(f"Previous Defense: {lateDEF}%")
                         print(f"Previous HP: {lateHP}")
@@ -123,7 +123,7 @@ def gameShop(hero, weaponPool, armorPool):
                         input("\nPress enter to continue >> ")
                     else:
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("============= ARMOR SHOP =============")
                         print("Insufficient amount of money.")
                         print(f"Armor Price: {armorPool[1].getPrice()} Gold")
                         print(f"Money: {hero.money} Gold")
@@ -136,7 +136,7 @@ def gameShop(hero, weaponPool, armorPool):
                         hero.equipArmor(armorPool[2])
                         hero.money = hero.money - armorPool[2].getPrice()
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("============= ARMOR SHOP =============")
                         print(f"{hero.armor.getName()} successfully purchased.")
                         print(f"Previous Defense: {lateDEF}%")
                         print(f"Previous HP: {lateHP}")
@@ -146,7 +146,7 @@ def gameShop(hero, weaponPool, armorPool):
                         input("\nPress enter to continue >> ")
                     else:
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("============= ARMOR SHOP =============")
                         print("Insufficient amount of money.")
                         print(f"Armor Price: {armorPool[2].getPrice()} Gold")
                         print(f"Money: {hero.money} Gold")
@@ -159,7 +159,7 @@ def gameShop(hero, weaponPool, armorPool):
                         hero.equipArmor(armorPool[3])
                         hero.money = hero.money - armorPool[3].getPrice()
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("============= ARMOR SHOP =============")
                         print(f"{hero.armor.getName()} successfully purchased.")
                         print(f"Previous Defense: {lateDEF}%")
                         print(f"Previous HP: {lateHP}")
@@ -169,7 +169,7 @@ def gameShop(hero, weaponPool, armorPool):
                         input("\nPress enter to continue >> ")
                     else:
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("============= ARMOR SHOP =============")
                         print("Insufficient amount of money.")
                         print(f"Armor Price: {armorPool[3].getPrice()} Gold")
                         print(f"Money: {hero.money} Gold")
@@ -185,7 +185,7 @@ def gameShop(hero, weaponPool, armorPool):
             j = 0
             while j == 0:
                 os.system('cls' if os.name == 'nt' else 'clear')
-                print("======================================")
+                print("========== CONSUMABLE SHOP ===========")
                 print(f"Money: {hero.money} Gold")
                 print(f"Owned Mana Potion : {hero.inventory.potions[0].stack}")
                 print(f"Owned Health Potion : {hero.inventory.potions[1].stack}")
@@ -202,12 +202,12 @@ def gameShop(hero, weaponPool, armorPool):
                         hero.inventory.potions[0].stack = hero.inventory.potions[0].stack + 1
                         hero.money = hero.money - hero.inventory.potions[0].getPrice()
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("========== CONSUMABLE SHOP ===========")
                         print(f"{hero.inventory.potions[0].getName()} successfully purchased.")
                         input("\nPress enter to continue >> ")
                     else:
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("========== CONSUMABLE SHOP ===========")
                         print("Insufficient amount of money.")
                         print(f"{hero.inventory.potions[0].getName()} Price: {hero.inventory.potions[0].getPrice()} Gold")
                         print(f"Money: {hero.money} Gold")
@@ -218,12 +218,12 @@ def gameShop(hero, weaponPool, armorPool):
                         hero.inventory.potions[1].stack = hero.inventory.potions[1].stack + 1
                         hero.money = hero.money - hero.inventory.potions[1].getPrice()
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("========== CONSUMABLE SHOP ===========")
                         print(f"{hero.inventory.potions[1].getName()} successfully purchased.")
                         input("\nPress enter to continue >> ")
                     else:
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("========== CONSUMABLE SHOP ===========")
                         print("Insufficient amount of money.")
                         print(f"{hero.inventory.potions[1].getName()} Price: {hero.inventory.potions[1].getPrice()} Gold")
                         print(f"Money: {hero.money} Gold")
@@ -234,12 +234,12 @@ def gameShop(hero, weaponPool, armorPool):
                         hero.inventory.potions[2].stack = hero.inventory.potions[2].stack + 1
                         hero.money = hero.money - hero.inventory.potions[2].getPrice()
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("========== CONSUMABLE SHOP ===========")
                         print(f"{hero.inventory.potions[2].getName()} successfully purchased.")
                         input("\nPress enter to continue >> ")
                     else:
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================")
+                        print("========== CONSUMABLE SHOP ===========")
                         print("Insufficient amount of money.")
                         print(f"{hero.inventory.potions[2].getName()} Price: {hero.inventory.potions[2].getPrice()} Gold")
                         print(f"Money: {hero.money} Gold")
@@ -256,4 +256,3 @@ def gameShop(hero, weaponPool, armorPool):
 
         else:
             pass
-            

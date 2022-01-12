@@ -1,45 +1,55 @@
 import os
-
 from LogicCodes.heroClass import *
 from LogicCodes.heroRole import *
+from LogicCodes.equipmentPool import *
 
-# UI Login - Alfinata
+# CLI Login - Alfinata
 def gameLogin():
     os.system('cls' if os.name == 'nt' else 'clear')
-    print("======================================\n")
-    heroName = input("Insert your hero name here: ")
 
+    # Input Nama
+    print("============ WHO ARE YOU? ============")
+    heroName = input("\nInsert your hero name here: ")
+
+    # Seleksi Hero Class
     i = 0
     while i == 0:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("======================================\n")
+        print("========== CLASS SELECTION ===========")
         print("Hero class selection:")
-        print("1. Warrior - Relies on pure strength")
-        print("2. Mage - Master of powerful spells")
-        print("3. Assassin - Agile and deadly")
-        print("")
-        roleInput = input("Press the keys to continue >> ")
+        print("1. Warrior - Relies on pure might and strength")
+        print("2. Mage - Master of powerful and disruptive spells")
+        print("3. Assassin - Swift, agile, and extremely deadly")
+        roleInput = input("\nPress the keys to continue >> ")
+
+        # Inisialisasi Hero Warrior
         if roleInput == "1":
-            heroRole = warriorRole()
-            playerHero = basicHero(heroName, 120, 100, heroRole, 0)
+            playerHero = basicHero(heroName, 120, 100, warriorRole(), 0)
+            playerHero.equipWeapon(lowWarriorWeapon)
+            playerHero.equipArmor(lowWarriorArmor)
             i = 1
+        
+        # Inisialisasi Hero Mage
         elif roleInput == "2":
-            heroRole = mageRole()
-            playerHero = basicHero(heroName, 100, 120, heroRole, 0)
+            playerHero = basicHero(heroName, 100, 120, mageRole(), 0)
+            playerHero.equipWeapon(lowMageWeapon)
+            playerHero.equipArmor(lowMageArmor)
             i = 1
+        
+        # Inisialisasi Hero Assassin
         elif roleInput == "3":
-            heroRole = assassinRole()
-            playerHero = basicHero(heroName, 100, 100, heroRole, 10)
+            playerHero = basicHero(heroName, 100, 100, assassinRole(), 20)
+            playerHero.equipWeapon(lowAssassinWeapon)
+            playerHero.equipArmor(lowAssassinArmor)
             i = 1
         else:
             pass
 
+    # Opening
     os.system('cls' if os.name == 'nt' else 'clear')
-    print("======================================\n")
+    print("========= WELCOME TO LIL RPG =========")
     print(f"OK {playerHero.heroRole.checkRole()} {playerHero.getName()}, Welcome to this little RPG game.")
     print("In this game, your objective is to defeat the final boss.")
-    print("Each fight will drop gold, which you'll use to buy equipments to make yourself stronger\n")
-    input("<<Press enter to continue>>")
-
-    os.system('cls' if os.name == 'nt' else 'clear')
+    print("In each fight you will loot gold, which you'll use to buy equipments to make yourself stronger")
+    input("\nPress enter to continue>>")
     return playerHero
