@@ -1,7 +1,13 @@
 from LogicCodes.basicClass import basicUnit
 
+
+class basicEnemy(basicUnit):
+    def __init__(self, name, HP, ATK, DEF, money, evade, critChance):
+        super().__init__(name, HP, ATK, DEF, money, evade, critChance)
+        self.abilityCounter = 5
+
 # Class Slime - Alfinata
-class slime(basicUnit):
+class slime(basicEnemy):
     def __init__(self):
         super().__init__("Slime", 30, 12, 0, 8, 0, 5)
 

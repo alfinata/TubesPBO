@@ -57,10 +57,10 @@ class basicUnit:
             critProc = random.randrange(1, 101)
             if critProc < self.critChance:
                 dmgDealt = target.takeDamage(self.__ATK*2.5)
-                print(f"{self.getName()} attacked {target.getName()} and scores a CRITICAL HIT!, dealing {dmgDealt} damage.\n")
+                print(f"{self.getName()} attacked {target.getName()} and scores a CRITICAL HIT!, dealing {dmgDealt} damage.")
             else:
                 dmgDealt = target.takeDamage(self.__ATK)
-                print(f"{self.getName()} attacked {target.getName()}, dealing {dmgDealt} damage.\n")
+                print(f"{self.getName()} attacked {target.getName()}, dealing {dmgDealt} damage.")
         else:
             print(f"Too bad! {target.getName()} completely evaded the attack!")
 
@@ -84,12 +84,18 @@ class basicUnit:
         print(f"{self.getName()}")
         print(f"HP: {self.getHPCurrent()}/{self.getHPMax()}")
         print(f"Attack Power: {self.getATK()}")
-        print(f"Defense Power: {self.getDEF()}")
-        print(f"Critical Chance: {self.critChance}")
-        print(f"Evasion: {self.getEvade()}")
+        print(f"Defense Power: {self.getDEF()}%")
+        print(f"Critical Chance: {self.critChance}%")
+        print(f"Evasion: {self.getEvade()}%")
 
 # Class Basic Item - Alfinata
 class basicItem:
     def __init__(self, name, price):
         self.__name = name
         self.__price = price
+
+    def getName(self):
+        return self.__name
+    
+    def getPrice(self):
+        return self.__price

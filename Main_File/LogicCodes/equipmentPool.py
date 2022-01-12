@@ -17,20 +17,21 @@ higAssassinWeapon = Weapon("Iron Machete", 20, "Assassin", 20)
 endAssassinWeapon = Weapon("Mithril Sabre", 30, "Assassin", 25)
 
 # Armor Values
-lowWarriorArmor = Armor("Leather Armor", 0, "Warrior", 18, 5)
+
+lowWarriorArmor = Armor("Leather Armor", 0, "Warrior", 0, 0)
 medWarriorArmor = Armor("Stone Armor", 10, "Warrior", 36, 10)
-higWarriorArmor = Armor("Iron Armor", 20, "Warrior", 54, 15)
-endWarriorArmor = Armor("Guardian Armor", 30, "Warrior", 72, 20)
+higWarriorArmor = Armor("Iron Armor", 20, "Warrior", 72, 15)
+endWarriorArmor = Armor("Guardian Armor", 30, "Warrior", 108, 20)
 
-lowMageArmor = Armor("Apprentice Robe", 0, "Mage", 12, 5)
+lowMageArmor = Armor("Apprentice Robe", 0, "Mage", 0, 0)
 medMageArmor = Armor("Magician Clothes", 10, "Mage", 24, 10)
-higMageArmor = Armor("Chakra Cape", 20, "Mage", 36, 15)
-endMageArmor = Armor("Wizard Robe", 30, "Mage", 48, 20)
+higMageArmor = Armor("Chakra Cape", 20, "Mage", 48, 15)
+endMageArmor = Armor("Wizard Robe", 30, "Mage", 72, 20)
 
-lowAssassinArmor = Armor("Rogue Shirt", 0, "Assassin", 15, 5)
+lowAssassinArmor = Armor("Rogue Shirt", 0, "Assassin", 0, 0)
 medAssassinArmor = Armor("Leather Light Armor", 10, "Assassin", 30, 10)
-higAssassinArmor = Armor("Ninja Uniform", 20, "Assassin", 45, 15)
-endAssassinArmor = Armor("Swift Assassin Robe", 30, "Assassin", 60, 20)
+higAssassinArmor = Armor("Ninja Uniform", 20, "Assassin", 60, 15)
+endAssassinArmor = Armor("Swift Assassin Robe", 30, "Assassin", 90, 20)
 
 # Weapon Pools
 warriorWeaponPool = [lowWarriorWeapon, medWarriorWeapon, higWarriorWeapon, endWarriorWeapon]

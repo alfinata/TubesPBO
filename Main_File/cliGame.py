@@ -8,8 +8,18 @@ from LogicCodes.heroRole import *
 
 # a = gameLogin()
 
-a = basicHero("Test Hero", 120, 100, mageRole(), 0)
-a.equipWeapon(lowMageWeapon)
+a = basicHero("WarriorTestHero", 400, 100, warriorRole(), 0)
+a.equipWeapon(lowWarriorWeapon)
+a.equipArmor(lowWarriorArmor)
+
+# a = basicHero("MageTestHero", 100, 120, mageRole(), 0)
+# a.equipWeapon(lowMageWeapon)
+# a.equipArmor(lowMageArmor)
+
+# a = basicHero("AssassinTestHero", 100, 100, assassinRole(), 10)
+# a.equipWeapon(lowAssassinWeapon)
+# a.equipArmor(lowAssassinArmor)
+
 gameMenu(a)
 
 # e = slime()

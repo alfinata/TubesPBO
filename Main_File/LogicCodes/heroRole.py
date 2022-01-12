@@ -41,34 +41,44 @@ class mageRole(heroRole):
 # Class Assassin Role - Din
 class assassinRole(heroRole):
     def __init__(self):
-        super().__init__("Assassin")
+        super().__init__("Assassin", 20, 10)
 
-    def doDoubleSlash(self):
-        print("DoubleSlash activated")
+    def showAbilities(self):
+        print(f"1. Lifesteal - Attack with 50% lifesteal (20 energy)")
+        print(f"2. Phantom - Increase critical chance (10 energy)")
 
-    def doPhantom(self):
-        print("Phantom activated")
+    def doAbility1(self, hero, target):
+        hero.useEnergy(self.manaCost1)
+        dmgTaken = target.takeDamage(hero.getATK())
+        hero.healHP(dmgTaken/2)
+        print(f"Lifesteal done succesfully! {target.getName()} suffers {dmgTaken} damage, ")
+        print(f"and {hero.getName()} heals {dmgTaken/2} HP.")
 
-    def doLifesteal(self):
-        print("Lifesteal activated")
-    
-    def triggerCunning(self):
-        print("Cunning triggered")
-
+    def doAbility2(self, hero, target):
+        hero.useEnergy(self.manaCost2)
+        hero.critChance = round(hero.critChance + ((100 - hero.critChance) * 25/100), 2)
+        print(f"{hero.getName()} succesfully used phantom.")
+        print(f"His critical chance is now {hero.critChance}%")
         
 # Class Warrior Role - Rafif
 class warriorRole(heroRole):
     def __init__(self):
-        super().__init__("Warrior")
+        super().__init__("Warrior", 20, 10)
         
-    def doWhirlwind(self):
-        print("Whirlwind activated")
-    
-    def doGroundSlam(self):
-        print("Ground Slam activated")
+    def showAbilities(self):
+        print(f"1. Whirlwind - Deals 2x damage (20 energy)")
+        print(f"2. Guard Stance - Increase defense (10 energy)")
 
-    def doGuardStance(self):
-        print("Guard Stance activated")
-
-    def triggerPassiveRage(self):
-        print("Passive Rage triggered")
+    def doAbility1(self, hero, target):
+        hero.useEnergy(self.manaCost1)
+        dmgGiven = target.takeDamage(2 * hero.getATK())
+        print(f"Whirlwind hits {target.getName()}, dealing {dmgGiven} damage.")
+        
+    def doAbility2(self, hero, target):
+        hero.useEnergy(self.manaCost2)
+        baseDEF = hero.getDEF()
+        inverse = 100 - baseDEF
+        added = inverse * 15/100
+        increasedDEF = baseDEF + added
+        hero.setDEF(round(increasedDEF, 2))
+        print(f"Guard stance is activated! {hero.getName()} defense has been increased to {increasedDEF}")

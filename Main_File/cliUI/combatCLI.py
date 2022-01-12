@@ -3,42 +3,45 @@ from LogicCodes.basicClass import *
 from LogicCodes.heroRole import *
 
 # CLI Combat - Alfinata
-def gameCombat(hero, enemy):
+def gameCombat(inHero, enemy, round):
     battleCounter = 0
     battleFinished = 0
     whoWin = 0
+    hero = inHero
 
     while battleFinished == 0:
         if battleCounter % 2 == 0:
             exitStatus = 0
             while exitStatus == 0:
                 os.system('cls' if os.name == 'nt' else 'clear')
-                print("======================================\n")
+                print(f"======== COMBAT STAGE {round} ==============")
                 hero.showInfo()
-                print("\n======================================\n")
+                print("======================================")
                 enemy.showInfo()
-                print("\n======================================\n")
+                print("======================================")
                 print("Actions")
                 print("1. Attack")
                 print("2. Skill")
+                print("3. Use Potion")
+                print("4. Flee")
                 toDo = input("\nPress the keys to continue >> ")
                 if toDo == "1":
                     os.system('cls' if os.name == 'nt' else 'clear')
-                    print("======================================\n")
+                    print(f"======== COMBAT STAGE {round} ==============")
                     hero.attackTarget(enemy)
-                    print("\n======================================\n")
+                    print("======================================")
                     enemy.showInfo()
-                    input("<<Press enter to continue>>")
+                    input("\n<<Press enter to continue>>")
                     exitStatus = 1
                 elif toDo == "2":
                     skillChosen = 0
                     while skillChosen == 0:
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("======================================\n")
+                        print(f"======== COMBAT STAGE {round} ==============")
                         hero.showInfo()
-                        print("\n======================================\n")
+                        print("======================================")
                         enemy.showInfo()
-                        print("\n======================================\n")
+                        print("======================================")
                         print("Your skills:")
                         hero.heroRole.showAbilities()
                         print("3. Cancel")
@@ -75,9 +78,9 @@ def gameCombat(hero, enemy):
                     pass
         else:
             os.system('cls' if os.name == 'nt' else 'clear')
-            print("======================================\n")
+            print(f"======== COMBAT STAGE {round} ==============")
             enemy.attackTarget(hero)
-            print("======================================\n")
+            print("======================================")
             hero.showInfo()
             input("<<Press enter to continue>>")
         if hero.getHPCurrent() == 0:
@@ -88,16 +91,18 @@ def gameCombat(hero, enemy):
             whoWin = 1
         battleCounter += 1
     os.system('cls' if os.name == 'nt' else 'clear')
-    print("======================================\n")
+    print(f"======== COMBAT STAGE {round} ==============")
     if whoWin == 1:
         print(f"Congratulations, you beat {enemy.getName()}")
         print(f"You get {enemy.money} gold after looting the enemy.")
-        hero.money += enemy.money
-        input("<<Press enter to continue>>")
-        return 0
+        inHero.money += enemy.money
+        inHero.setHPCurrent(hero.getHPCurrent())
+        input("\n<<Press enter to continue>>")
+        return 0, inHero
     elif whoWin == 2:
         print(f"Oh no! You got beaten by {enemy.getName()}")
-        print("\n======================================\n")
+        print("======================================")
         print("GAME OVER")
-        print("\n======================================\n")
-        return 1
+        print("======================================")
+        input("\n<<Press enter to continue>>")
+        return 1, inHero
