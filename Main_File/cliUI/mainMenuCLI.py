@@ -4,10 +4,12 @@ from cliUI.combatCLI import gameCombat
 from LogicCodes.equipmentPool import *
 from LogicCodes.enemyClass import *
 from LogicCodes.heroClass import *
+from cliUI.dungeonCLI import *
 
 # CLI Main Menu - Rapip
 def gameMenu(hero):
     loseCondition = 0
+    stageNow = 1 #
     while loseCondition == 0:
         os.system('cls' if os.name == 'nt' else 'clear')
         print("============= MAIN MENU ==============")
@@ -23,9 +25,7 @@ def gameMenu(hero):
         
         # Enter Dungeon
         if menuInput == "1":
-            testing_slime = slime()
-            roundNow = 1
-            endGameCondition, hero = gameCombat(hero, testing_slime, roundNow)
+            hero = dungeon(hero, stageNow) #
         
         # Enter Shop
         elif menuInput == "2":
@@ -38,17 +38,56 @@ def gameMenu(hero):
         
         # Show Inventory
         elif menuInput == "3":
-            os.system('cls' if os.name == 'nt' else 'clear')
-            print("============= INVENTORY ==============")
-            print(f"Money : {hero.money} Gold")
-            print(f"Weapon : {hero.weapon.getName()} (Attack Power : {hero.getATK()})")
-            print(f"Armor : {hero.armor.getName()} (Defense Power : {hero.getDEF()}%) (HP Bonus : {hero.armor.HPBonus})")
-            print("======================================")
-            print("Potions:")
-            print(f"Health Potion : {hero.inventory.potions[0].stack}")
-            print(f"Mana Potion : {hero.inventory.potions[1].stack}")
-            print(f"Attack Potion : {hero.inventory.potions[2].stack}")
-            input("\nPress enter to continue >> ")
+            i = 0
+            while i == 0:
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print("============= INVENTORY ==============")
+                print(f"Money : {hero.money} Gold")
+                print(f"Weapon : {hero.weapon.getName()} (Attack Power : {hero.getATK()})")
+                print(f"Armor : {hero.armor.getName()} (Defense Power : {hero.getDEF()}%) (HP Bonus : {hero.armor.HPBonus})")
+                print("======================================")
+                print("Potions : ")
+                print(f"Health Potion : {hero.inventory.potions[1].stack}")
+                print(f"Mana Potion : {hero.inventory.potions[0].stack}")
+                print(f"Attack Potion : {hero.inventory.potions[2].stack}")
+                print("\nSelect the potion you want to use")
+                print(f"1. Health Potion")
+                print(f"2. Mana Potion")
+                print(f"3. Exit")   
+                potionInput = input("\nPress the keys to continue >> ")
+                if potionInput == "1":
+                    if hero.inventory.potions[1].stack > 0:
+                        hero.inventory.potions[1].stack -= 1
+                        hero.healHP(hero.inventory.potions[0].value)
+                        os.system('cls' if os.name == 'nt' else 'clear')
+                        print("======================================")
+                        print(f"{hero.getName()} consumed a Health Potion, restored {hero.inventory.potions[1].value} HP.")
+                        print("======================================")
+                        hero.showInfo()
+                        input("\nPress enter to continue>>")
+                    else:
+                        os.system('cls' if os.name == 'nt' else 'clear')
+                        print("======================================")
+                        print("Not enough potions.")
+                        input("\nPress enter to continue>>")
+                elif potionInput == "2":
+                    if hero.inventory.potions[0].stack > 0:
+                        hero.inventory.potions[0].stack -= 1
+                        hero.restoreEnergy(hero.inventory.potions[1].value)
+                        os.system('cls' if os.name == 'nt' else 'clear')
+                        print("======================================")
+                        print(f"{hero.getName()} consumed a Mana Potion, restored {hero.inventory.potions[0].value} Energy.")
+                        print("======================================")
+                        hero.showInfo()
+                        input("\nPress enter to continue>>")
+                    else:
+                        os.system('cls' if os.name == 'nt' else 'clear')
+                        print("======================================")
+                        print("Not enough potions.")
+                        input("\nPress enter to continue>>")
+                elif potionInput == "3":
+                    i = 1
+                    
 
         # Take a Rest
         elif menuInput == "4":

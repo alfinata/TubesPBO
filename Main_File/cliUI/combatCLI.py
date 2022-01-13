@@ -93,12 +93,12 @@ def gameCombat(inHero, enemy, round):
 
                 # Use Health Potion
                 elif toDo == "3":
-                    if hero.inventory.potions[0].stack > 0:
-                        hero.inventory.potions[0].stack -= 1
+                    if hero.inventory.potions[1].stack > 0:
+                        hero.inventory.potions[1].stack -= 1
                         hero.healHP(hero.inventory.potions[0].value)
                         os.system('cls' if os.name == 'nt' else 'clear')
                         print("======================================")
-                        print(f"{hero.getName()} consumed a Health Potion, restored {hero.inventory.potions[0].value} HP.")
+                        print(f"{hero.getName()} consumed a Health Potion, restored {hero.inventory.potions[1].value} HP.")
                         print("======================================")
                         hero.showInfo()
                         input("\nPress enter to continue>>")
@@ -111,12 +111,12 @@ def gameCombat(inHero, enemy, round):
 
                 # Use Mana Potion
                 elif toDo == "4":
-                    if hero.inventory.potions[1].stack > 0:
-                        hero.inventory.potions[1].stack -= 1
+                    if hero.inventory.potions[0].stack > 0:
+                        hero.inventory.potions[0].stack -= 1
                         hero.restoreEnergy(hero.inventory.potions[1].value)
                         os.system('cls' if os.name == 'nt' else 'clear')
                         print("======================================")
-                        print(f"{hero.getName()} consumed a Mana Potion, restored {hero.inventory.potions[1].value} Energy.")
+                        print(f"{hero.getName()} consumed a Mana Potion, restored {hero.inventory.potions[0].value} Energy.")
                         print("======================================")
                         hero.showInfo()
                         input("\nPress enter to continue>>")
@@ -159,10 +159,12 @@ def gameCombat(inHero, enemy, round):
                     exitStatus = 1
                 else:
                     pass
+
+        # Enemy Turn
         else:
             os.system('cls' if os.name == 'nt' else 'clear')
             print(f"======== COMBAT STAGE {round} ==============")
-            enemy.attackTarget(hero)
+            enemy.doSomething(hero)
             print("======================================")
             hero.showInfo()
             input("<<Press enter to continue>>")
@@ -197,4 +199,4 @@ def gameCombat(inHero, enemy, round):
         inHero.energyCurrent = hero.energyCurrent
         inHero.inventory = hero.inventory
         input("\n<<Press enter to continue>>")
-        return 0, inHero
+        return 1, inHero

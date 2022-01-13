@@ -192,9 +192,9 @@ def gameShop(hero, weaponPool, armorPool):
                 print(f"Owned Attack Potion : {hero.inventory.potions[2].stack}")
                 print("======================================")
                 print("Select the Potion you want to buy:")
-                print("1. Mana Potion")
-                print("2. HP Potion")
-                print("3. Attack Potion")
+                print(f"1. Mana Potion (Price: {hero.inventory.potions[0].getPrice()} Gold)")
+                print(f"2. HP Potion (Price: {hero.inventory.potions[1].getPrice()} Gold)")
+                print(f"3. Attack Potion (Price: {hero.inventory.potions[2].getPrice()} Gold)")
                 print("4. Back to General Shop")
                 potionSelect = input("Press the keys to continue >> ")
                 if potionSelect == "1":
