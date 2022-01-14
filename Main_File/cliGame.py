@@ -6,7 +6,7 @@ from LogicCodes.equipmentPool import *
 from LogicCodes.heroClass import *
 from LogicCodes.heroRole import *
 
-# a = gameLogin()
+a = gameLogin()
 
 # a = basicHero("WarriorTestHero", 120, 100, warriorRole(), 0)
 # a.equipWeapon(lowWarriorWeapon)
@@ -16,9 +16,9 @@ from LogicCodes.heroRole import *
 # a.equipWeapon(lowMageWeapon)
 # a.equipArmor(lowMageArmor)
 
-a = basicHero("AssassinTestHero", 100, 100, assassinRole(), 10)
-a.equipWeapon(lowAssassinWeapon)
-a.equipArmor(lowAssassinArmor)
+# a = basicHero("AssassinTestHero", 100, 100, assassinRole(), 10)
+# a.equipWeapon(lowAssassinWeapon)
+# a.equipArmor(lowAssassinArmor)
 
 gameMenu(a)
 

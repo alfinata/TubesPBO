@@ -8,10 +8,10 @@ from cliUI.dungeonCLI import *
 
 # CLI Main Menu - Rapip
 def gameMenu(hero):
-    loseCondition = 0
+    exitGameStatus = 0
     stageProgress = 1 # 1
     storyProgress = 0 # 0
-    while loseCondition == 0:
+    while exitGameStatus == 0:
         os.system('cls' if os.name == 'nt' else 'clear')
         print("============= MAIN MENU ==============")
         hero.showHeroInfo()
@@ -162,7 +162,7 @@ def gameMenu(hero):
 
         # Exit Game
         elif menuInput == "5":
-            loseCondition = 1
+            exitGameStatus = 1
 
         else:
             pass
