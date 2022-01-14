@@ -47,7 +47,7 @@ class assassinRole(heroRole):
 
     def doAbility1(self, hero, target):
         hero.useEnergy(self.manaCost1)
-        dmgTaken = target.takeDamage(hero.getATK())
+        dmgTaken = round(target.takeDamage(hero.getATK()), 0)
         hero.healHP(dmgTaken)
         print(f"Lifesteal done succesfully! {target.getName()} suffers {dmgTaken} damage, ")
         print(f"and {hero.getName()} heals {dmgTaken} HP.")

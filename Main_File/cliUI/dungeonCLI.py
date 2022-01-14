@@ -100,12 +100,15 @@ def dungeon(hero, stageNow, storyProgress, stageProgress):
             roundNow += 1
     
     if(stageNow == 7):
-        finishedTheGame = 0
-        endGameCondition = 0
-        while endGameCondition == 0:
-            enemy = demonking()
-            endGameCondition, hero = gameCombat(hero, enemy, roundNow)
-            roundNow += 1
+        if storyProgress == 7:
+            storyStage7()
+            storyProgress += 1
+        enemy = demonKing()
+        endGameCondition, hero = gameCombat(hero, enemy, stageNow, 1)
+        if endGameCondition == 0:
+            if storyProgress == 8:
+                storyEnd()
+                storyProgress += 1
     
     if endGameCondition == 0 and stageProgress == stageNow:
         stageProgress += 1

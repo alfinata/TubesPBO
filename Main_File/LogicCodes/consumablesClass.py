@@ -10,20 +10,20 @@ class Consumables(basicItem):
 # Class HP Potion - Rafif
 class HPPot(Consumables):
     def __init__(self, stack):
-        super().__init__("HP Potion", 10, stack)
+        super().__init__("HP Potion", 8, stack)
         self.value = 30
     # def restoreHP():
 
 # Class Mana Potion - Rafif
 class ManaPot(Consumables):
     def __init__(self, stack):
-        super().__init__("Mana Potion", 10, stack)
+        super().__init__("Mana Potion", 8, stack)
         self.value = 25
     # def restoreMana():
 
 # Class ATK Potion - Rafif
 class ATKPot(Consumables):
     def __init__(self, stack):
-        super().__init__("ATK Potion", 10, stack)
+        super().__init__("ATK Potion", 8, stack)
         self.value = 10
     # def bonusATK():

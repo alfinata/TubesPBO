@@ -9,8 +9,8 @@ from cliUI.dungeonCLI import *
 # CLI Main Menu - Rapip
 def gameMenu(hero):
     loseCondition = 0
-    stageProgress = 1
-    storyProgress = 0
+    stageProgress = 1 # 1
+    storyProgress = 0 # 0
     while loseCondition == 0:
         os.system('cls' if os.name == 'nt' else 'clear')
         print("============= MAIN MENU ==============")
@@ -35,12 +35,10 @@ def gameMenu(hero):
                 print("============= DUNGEON ================")
                 print("Dungeon stage selection:")
                 for stage in range(stageProgress):
-                    print(f"{stage+1}. Stage {stage+1}")
+                    if stage <= 7:
+                        print(f"{stage+1}. Stage {stage+1}")
                 print("8. Exit Dungeon")
                 stageInput = input("\nPress the keys to continue >> ")
-                
-
-
                 if stageInput == "8":
                     i = 1
                 elif (stageInput == "1" or 
@@ -120,7 +118,7 @@ def gameMenu(hero):
         # Take a Rest
         elif menuInput == "4":
             i = 0
-            innPrice = 25
+            innPrice = 20
             while i == 0:
                 os.system('cls' if os.name == 'nt' else 'clear')
                 print("=========== TAKE A REST ==============")

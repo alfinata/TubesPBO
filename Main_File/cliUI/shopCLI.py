@@ -41,6 +41,7 @@ def gameShop(hero, weaponPool, armorPool):
                         print(f"Previous Attack Power: {lateATK}")
                         print(f"New Attack Power: {hero.getATK()}")
                         input("\nPress enter to continue >> ")
+                        j = 1
                     else:
                         os.system('cls' if os.name == 'nt' else 'clear')
                         print("=========== WEAPON SHOP ==============")
@@ -60,6 +61,7 @@ def gameShop(hero, weaponPool, armorPool):
                         print(f"Previous Attack Power: {lateATK}")
                         print(f"New Attack Power: {hero.getATK()}")
                         input("\nPress enter to continue >> ")
+                        j = 1
                     else:
                         os.system('cls' if os.name == 'nt' else 'clear')
                         print("=========== WEAPON SHOP ==============")
@@ -79,6 +81,7 @@ def gameShop(hero, weaponPool, armorPool):
                         print(f"Previous Attack Power: {lateATK}")
                         print(f"New Attack Power: {hero.getATK()}")
                         input("\nPress enter to continue >> ")
+                        j = 1
                     else:
                         os.system('cls' if os.name == 'nt' else 'clear')
                         print("=========== WEAPON SHOP ==============")
@@ -121,6 +124,7 @@ def gameShop(hero, weaponPool, armorPool):
                         print(f"New Defense: {hero.getDEF()}%")
                         print(f"New HP: {hero.getHPMax()}")
                         input("\nPress enter to continue >> ")
+                        j = 1
                     else:
                         os.system('cls' if os.name == 'nt' else 'clear')
                         print("============= ARMOR SHOP =============")
@@ -144,6 +148,7 @@ def gameShop(hero, weaponPool, armorPool):
                         print(f"New Defense: {hero.getDEF()}%")
                         print(f"New HP: {hero.getHPMax()}")
                         input("\nPress enter to continue >> ")
+                        j = 1
                     else:
                         os.system('cls' if os.name == 'nt' else 'clear')
                         print("============= ARMOR SHOP =============")
@@ -167,6 +172,7 @@ def gameShop(hero, weaponPool, armorPool):
                         print(f"New Defense: {hero.getDEF()}%")
                         print(f"New HP: {hero.getHPMax()}")
                         input("\nPress enter to continue >> ")
+                        j = 1
                     else:
                         os.system('cls' if os.name == 'nt' else 'clear')
                         print("============= ARMOR SHOP =============")

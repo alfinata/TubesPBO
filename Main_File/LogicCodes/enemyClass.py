@@ -1,3 +1,4 @@
+from imghdr import what
 import random
 from LogicCodes.basicClass import basicUnit
 
@@ -65,7 +66,7 @@ class vampire(basicEnemy):
             self.attackTarget(target)
         else:
             dmgDealt = target.takeDamage(30)
-            self.healHP(self.getHPMax()/5)
+            self.healHP(self.getHPMax()/10)
             print(f"Vampire uses Bloodsuck! He dealt {dmgDealt} damage and healed himself to {self.getHPCurrent()}/{self.getHPMax()}")
 
 # Class Demon - Din
@@ -86,28 +87,23 @@ class demon(basicEnemy):
             self.attackTarget(target)
 
 # Class Demon King
-class demonking(demon):
+class demonKing(basicEnemy):
     def __init__(self):
         super().__init__("Demon King", 200, 30, 30, 50, 20, 10)
     
     def doSomething(self, target):
         if self.abilityCounter == 0:
-            whatToDoProc = random.randrange(1, 101)
-            if whatToDoProc < 33:
-                self.attackTarget(target)
-            elif whatToDoProc > 66:
-                dmgDealt = target.takeDamage(30)
-                self.healHP(self.getHPMax())
-                print(f"Demon King uses Bloodsuck! He dealt {dmgDealt} damage and healed himself to {self.getHPCurrent()/self.getHPMax()}")
-            else:
-                target.setATK(target.getATK() * 0.9)
-                self.abilityCounter == 1
-                print(f"Demon King uses Scare! Hero's attack power has been reduced to {target.getATK()}")
+            target.setHPCurrent(round(target.getHPCurrent()*0.5, 0))
+            print(f"Demon King uses Doom! {target.getName()} loses half of its HP, with only {target.getHPCurrent()}/{target.getHPMax()} HP remaining.")
+            self.abilityCounter = 1
         else:
-            whatToDoProc = random.randrange(1, 101)
-            if whatToDoProc < 50:
+            whatToDoProc = random.randrange(1, 4)
+            if whatToDoProc == 1:
                 self.attackTarget(target)
+            elif whatToDoProc == 2:
+                target.setATK(round(target.getATK() * 0.95, 0))
+                print(f"Demon King uses Scare! Hero's attack power has been reduced to {target.getATK()}")
             else:
-                dmgDealt = target.takeDamage(30)
-                self.healHP(self.getHPMax())
-                print(f"Demon King uses Bloodsuck! He dealt {dmgDealt} damage and healed himself to {self.getHPCurrent()/self.getHPMax()}")
+                dmgDealt = target.takeDamage(40)
+                self.healHP(round(self.getHPMax()*0.15, 0))
+                print(f"Demon King uses Bloodsuck! He dealt {dmgDealt} damage and healed himself to {self.getHPCurrent()}/{self.getHPMax()}")
