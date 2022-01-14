@@ -9,7 +9,8 @@ from cliUI.dungeonCLI import *
 # CLI Main Menu - Rapip
 def gameMenu(hero):
     loseCondition = 0
-    stageNow = 1 #
+    stageProgress = 1
+    storyProgress = 0
     while loseCondition == 0:
         os.system('cls' if os.name == 'nt' else 'clear')
         print("============= MAIN MENU ==============")
@@ -25,7 +26,34 @@ def gameMenu(hero):
         
         # Enter Dungeon
         if menuInput == "1":
-            hero = dungeon(hero, stageNow) #
+            if storyProgress == 0:
+                storyStart()
+                storyProgress = 1
+            i = 0
+            while i == 0:
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print("============= DUNGEON ================")
+                print("Dungeon stage selection:")
+                for stage in range(stageProgress):
+                    print(f"{stage+1}. Stage {stage+1}")
+                print("8. Exit Dungeon")
+                stageInput = input("\nPress the keys to continue >> ")
+                
+
+
+                if stageInput == "8":
+                    i = 1
+                elif (stageInput == "1" or 
+                    stageInput == "2" or
+                    stageInput == "3" or 
+                    stageInput == "4" or 
+                    stageInput == "5" or 
+                    stageInput == "6" or 
+                    stageInput == "7"):
+                    if int(stageInput) <= stageProgress:
+                        hero, storyProgress, stageProgress = dungeon(hero, int(stageInput), storyProgress, stageProgress)
+                        i = 1
+                else: pass
         
         # Enter Shop
         elif menuInput == "2":
@@ -58,7 +86,7 @@ def gameMenu(hero):
                 if potionInput == "1":
                     if hero.inventory.potions[1].stack > 0:
                         hero.inventory.potions[1].stack -= 1
-                        hero.healHP(hero.inventory.potions[0].value)
+                        hero.healHP(hero.inventory.potions[1].value)
                         os.system('cls' if os.name == 'nt' else 'clear')
                         print("======================================")
                         print(f"{hero.getName()} consumed a Health Potion, restored {hero.inventory.potions[1].value} HP.")
@@ -73,7 +101,7 @@ def gameMenu(hero):
                 elif potionInput == "2":
                     if hero.inventory.potions[0].stack > 0:
                         hero.inventory.potions[0].stack -= 1
-                        hero.restoreEnergy(hero.inventory.potions[1].value)
+                        hero.restoreEnergy(hero.inventory.potions[0].value)
                         os.system('cls' if os.name == 'nt' else 'clear')
                         print("======================================")
                         print(f"{hero.getName()} consumed a Mana Potion, restored {hero.inventory.potions[0].value} Energy.")
@@ -140,7 +168,3 @@ def gameMenu(hero):
 
         else:
             pass
-
-        # Check Lose Condition
-        if hero.getHPCurrent == 0:
-            loseCondition = 1

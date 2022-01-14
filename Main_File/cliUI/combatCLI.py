@@ -3,7 +3,7 @@ from LogicCodes.basicClass import *
 from LogicCodes.heroRole import *
 
 # CLI Combat - Alfinata
-def gameCombat(inHero, enemy, round):
+def gameCombat(inHero, enemy, level, round):
     battleCounter = 0
     battleFinished = 0
     whoWin = 0
@@ -17,6 +17,7 @@ def gameCombat(inHero, enemy, round):
             exitStatus = 0
             while exitStatus == 0:
                 os.system('cls' if os.name == 'nt' else 'clear')
+                print(f"======== COMBAT LEVEL {level} ==============")
                 print(f"======== COMBAT STAGE {round} ==============")
                 hero.showInfo()
                 print("======================================")
@@ -34,6 +35,7 @@ def gameCombat(inHero, enemy, round):
                 # Attack Enemy
                 if toDo == "1":
                     os.system('cls' if os.name == 'nt' else 'clear')
+                    print(f"======== COMBAT LEVEL {level} ==============")
                     print(f"======== COMBAT STAGE {round} ==============")
                     hero.attackTarget(enemy)
                     print("======================================")
@@ -46,6 +48,7 @@ def gameCombat(inHero, enemy, round):
                     skillChosen = 0
                     while skillChosen == 0:
                         os.system('cls' if os.name == 'nt' else 'clear')
+                        print(f"======== COMBAT LEVEL {level} ==============")
                         print(f"======== COMBAT STAGE {round} ==============")
                         hero.showInfo()
                         print("======================================")
@@ -95,7 +98,7 @@ def gameCombat(inHero, enemy, round):
                 elif toDo == "3":
                     if hero.inventory.potions[1].stack > 0:
                         hero.inventory.potions[1].stack -= 1
-                        hero.healHP(hero.inventory.potions[0].value)
+                        hero.healHP(hero.inventory.potions[1].value)
                         os.system('cls' if os.name == 'nt' else 'clear')
                         print("======================================")
                         print(f"{hero.getName()} consumed a Health Potion, restored {hero.inventory.potions[1].value} HP.")
@@ -113,7 +116,7 @@ def gameCombat(inHero, enemy, round):
                 elif toDo == "4":
                     if hero.inventory.potions[0].stack > 0:
                         hero.inventory.potions[0].stack -= 1
-                        hero.restoreEnergy(hero.inventory.potions[1].value)
+                        hero.restoreEnergy(hero.inventory.potions[0].value)
                         os.system('cls' if os.name == 'nt' else 'clear')
                         print("======================================")
                         print(f"{hero.getName()} consumed a Mana Potion, restored {hero.inventory.potions[0].value} Energy.")
@@ -163,6 +166,7 @@ def gameCombat(inHero, enemy, round):
         # Enemy Turn
         else:
             os.system('cls' if os.name == 'nt' else 'clear')
+            print(f"======== COMBAT LEVEL {level} ==============")
             print(f"======== COMBAT STAGE {round} ==============")
             enemy.doSomething(hero)
             print("======================================")
@@ -176,6 +180,7 @@ def gameCombat(inHero, enemy, round):
             whoWin = 1
         battleCounter += 1
     os.system('cls' if os.name == 'nt' else 'clear')
+    print(f"======== COMBAT LEVEL {level} ==============")
     print(f"======== COMBAT STAGE {round} ==============")
     if whoWin == 1:
         print(f"Congratulations, you beat {enemy.getName()}")
@@ -187,14 +192,21 @@ def gameCombat(inHero, enemy, round):
         input("\n<<Press enter to continue>>")
         return 0, inHero
     elif whoWin == 2:
+        moneyNow = int(hero.money*0.8)
+        inHero.money = moneyNow
         print(f"Oh no! You got beaten by {enemy.getName()}")
         print("======================================")
-        print("GAME OVER")
+        print("You got unconscious. You then wake up in the town. It seems you managed to stay alive.")
+        print(f"But you lose some gold, you now only have {inHero.money} Gold left.")
         print("======================================")
+        inHero.setHPCurrent(hero.getHPMax()*0.2)
+        inHero.energyCurrent = hero.energyMax*0.2
+        inHero.inventory = hero.inventory
         input("\n<<Press enter to continue>>")
         return 1, inHero
     elif whoWin == 3:
         print(f"You Managed to get Away...")
+        inHero.money = hero.money
         inHero.setHPCurrent(hero.getHPCurrent())
         inHero.energyCurrent = hero.energyCurrent
         inHero.inventory = hero.inventory

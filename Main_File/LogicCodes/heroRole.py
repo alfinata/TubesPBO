@@ -28,12 +28,12 @@ class mageRole(heroRole):
 
     def doAbility1(self, hero, target):
         hero.useEnergy(self.manaCost1)
-        dmgTaken = target.takeDamage(40)
+        dmgTaken = round(target.takeDamage(40), 0)
         print(f"Flame Burst Shot! {target.getName()} suffers {dmgTaken} damage.")
 
     def doAbility2(self, hero, target):
         hero.useEnergy(self.manaCost2)
-        target.setDEF(target.getDEF() - 30)
+        target.setDEF(target.getDEF() - 20)
         print(f"Enemy weakened! {target.getName()} defense has been lowered to {target.getDEF()}")
 
 # Class Assassin Role - Din
@@ -69,7 +69,7 @@ class warriorRole(heroRole):
 
     def doAbility1(self, hero, target):
         hero.useEnergy(self.manaCost1)
-        dmgGiven = target.takeDamage(2 * hero.getATK())
+        dmgGiven = round(target.takeDamage(2 * hero.getATK()), 2)
         print(f"Whirlwind hits {target.getName()}, dealing {dmgGiven} damage.")
         
     def doAbility2(self, hero, target):
