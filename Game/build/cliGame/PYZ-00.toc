@@ -1,5 +1,5 @@
 ('D:\\College\\5th Semester\\Object-Oriented '
- 'Programming\\TubesPBO\\Main_File\\build\\cliGame\\PYZ-00.pyz',
+ 'Programming\\TubesPBO\\Main\\build\\cliGame\\PYZ-00.pyz',
  [('multiprocessing.popen_spawn_posix',
    'C:\\Program Files\\Python310\\lib\\multiprocessing\\popen_spawn_posix.py',
    'PYMODULE'),
@@ -512,79 +512,79 @@
   ('multiprocessing',
    'C:\\Program Files\\Python310\\lib\\multiprocessing\\__init__.py',
    'PYMODULE'),
-  ('_py_abc', 'C:\\Program Files\\Python310\\lib\\_py_abc.py', 'PYMODULE'),
   ('stringprep',
    'C:\\Program Files\\Python310\\lib\\stringprep.py',
    'PYMODULE'),
   ('tracemalloc',
    'C:\\Program Files\\Python310\\lib\\tracemalloc.py',
    'PYMODULE'),
+  ('_py_abc', 'C:\\Program Files\\Python310\\lib\\_py_abc.py', 'PYMODULE'),
   ('LogicCodes.heroRole',
    'D:\\College\\5th Semester\\Object-Oriented '
-   'Programming\\TubesPBO\\Main_File\\LogicCodes\\heroRole.py',
+   'Programming\\TubesPBO\\Main\\LogicCodes\\heroRole.py',
    'PYMODULE'),
   ('LogicCodes',
    'D:\\College\\5th Semester\\Object-Oriented '
-   'Programming\\TubesPBO\\Main_File\\LogicCodes\\__init__.py',
+   'Programming\\TubesPBO\\Main\\LogicCodes\\__init__.py',
    'PYMODULE'),
   ('LogicCodes.heroClass',
    'D:\\College\\5th Semester\\Object-Oriented '
-   'Programming\\TubesPBO\\Main_File\\LogicCodes\\heroClass.py',
+   'Programming\\TubesPBO\\Main\\LogicCodes\\heroClass.py',
    'PYMODULE'),
   ('LogicCodes.consumablesClass',
    'D:\\College\\5th Semester\\Object-Oriented '
-   'Programming\\TubesPBO\\Main_File\\LogicCodes\\consumablesClass.py',
+   'Programming\\TubesPBO\\Main\\LogicCodes\\consumablesClass.py',
    'PYMODULE'),
   ('LogicCodes.basicClass',
    'D:\\College\\5th Semester\\Object-Oriented '
-   'Programming\\TubesPBO\\Main_File\\LogicCodes\\basicClass.py',
+   'Programming\\TubesPBO\\Main\\LogicCodes\\basicClass.py',
    'PYMODULE'),
   ('LogicCodes.equipmentPool',
    'D:\\College\\5th Semester\\Object-Oriented '
-   'Programming\\TubesPBO\\Main_File\\LogicCodes\\equipmentPool.py',
+   'Programming\\TubesPBO\\Main\\LogicCodes\\equipmentPool.py',
    'PYMODULE'),
   ('LogicCodes.equipmentClass',
    'D:\\College\\5th Semester\\Object-Oriented '
-   'Programming\\TubesPBO\\Main_File\\LogicCodes\\equipmentClass.py',
+   'Programming\\TubesPBO\\Main\\LogicCodes\\equipmentClass.py',
    'PYMODULE'),
   ('LogicCodes.enemyClass',
    'D:\\College\\5th Semester\\Object-Oriented '
-   'Programming\\TubesPBO\\Main_File\\LogicCodes\\enemyClass.py',
+   'Programming\\TubesPBO\\Main\\LogicCodes\\enemyClass.py',
    'PYMODULE'),
   ('imghdr', 'C:\\Program Files\\Python310\\lib\\imghdr.py', 'PYMODULE'),
   ('cliUI.startCLI',
    'D:\\College\\5th Semester\\Object-Oriented '
-   'Programming\\TubesPBO\\Main_File\\cliUI\\startCLI.py',
+   'Programming\\TubesPBO\\Main\\cliUI\\startCLI.py',
    'PYMODULE'),
   ('cliUI',
    'D:\\College\\5th Semester\\Object-Oriented '
-   'Programming\\TubesPBO\\Main_File\\cliUI\\__init__.py',
+   'Programming\\TubesPBO\\Main\\cliUI\\__init__.py',
    'PYMODULE'),
   ('cliUI.mainMenuCLI',
    'D:\\College\\5th Semester\\Object-Oriented '
-   'Programming\\TubesPBO\\Main_File\\cliUI\\mainMenuCLI.py',
+   'Programming\\TubesPBO\\Main\\cliUI\\mainMenuCLI.py',
    'PYMODULE'),
   ('LogicCodes.saveStateClass',
    'D:\\College\\5th Semester\\Object-Oriented '
-   'Programming\\TubesPBO\\Main_File\\LogicCodes\\saveStateClass.py',
+   'Programming\\TubesPBO\\Main\\LogicCodes\\saveStateClass.py',
    'PYMODULE'),
   ('cliUI.dungeonCLI',
    'D:\\College\\5th Semester\\Object-Oriented '
-   'Programming\\TubesPBO\\Main_File\\cliUI\\dungeonCLI.py',
+   'Programming\\TubesPBO\\Main\\cliUI\\dungeonCLI.py',
    'PYMODULE'),
   ('cliUI.storyCLI',
    'D:\\College\\5th Semester\\Object-Oriented '
-   'Programming\\TubesPBO\\Main_File\\cliUI\\storyCLI.py',
+   'Programming\\TubesPBO\\Main\\cliUI\\storyCLI.py',
    'PYMODULE'),
   ('cliUI.shopCLI',
    'D:\\College\\5th Semester\\Object-Oriented '
-   'Programming\\TubesPBO\\Main_File\\cliUI\\shopCLI.py',
+   'Programming\\TubesPBO\\Main\\cliUI\\shopCLI.py',
    'PYMODULE'),
   ('cliUI.combatCLI',
    'D:\\College\\5th Semester\\Object-Oriented '
-   'Programming\\TubesPBO\\Main_File\\cliUI\\combatCLI.py',
+   'Programming\\TubesPBO\\Main\\cliUI\\combatCLI.py',
    'PYMODULE'),
   ('cliUI.loginCLI',
    'D:\\College\\5th Semester\\Object-Oriented '
-   'Programming\\TubesPBO\\Main_File\\cliUI\\loginCLI.py',
+   'Programming\\TubesPBO\\Main\\cliUI\\loginCLI.py',
    'PYMODULE')])

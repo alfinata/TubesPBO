@@ -2,7 +2,7 @@ import os
 from LogicCodes.heroClass import *
 
 # CLI Shop - Dindin
-def gameShop(hero, weaponPool, armorPool, savePath):
+def gameShop(hero, weaponPool, armorPool):
     exitShopStatus = 0
     while exitShopStatus == 0:
         os.system('cls' if os.name == 'nt' else 'clear')

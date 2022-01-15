@@ -157,8 +157,17 @@ def gameCombat(inHero, enemy, level, round):
 
                 # Flee
                 elif toDo == "6":
-                    battleFinished = 1
-                    whoWin = 3
+                    rollTheDice = random.randrange(1, 101)
+                    if rollTheDice > int(hero.getHPCurrent()/hero.getHPMax()*100):
+                        os.system('cls' if os.name == 'nt' else 'clear')
+                        print(f"======== COMBAT LEVEL {level} ==============")
+                        print(f"======== COMBAT STAGE {round} ==============")
+                        print("You failed to get away...")
+                        input("\nPress enter to continue>>")
+                    else: 
+                        battleFinished = 1
+                        whoWin = 3
+                        exitStatus = 1
                     exitStatus = 1
                 else:
                     pass

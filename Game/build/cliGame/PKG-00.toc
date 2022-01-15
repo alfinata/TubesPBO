@@ -1,5 +1,5 @@
 ('D:\\College\\5th Semester\\Object-Oriented '
- 'Programming\\TubesPBO\\Main_File\\build\\cliGame\\cliGame.pkg',
+ 'Programming\\TubesPBO\\Main\\build\\cliGame\\cliGame.pkg',
  {'BINARY': 1,
   'DATA': 1,
   'EXECUTABLE': 1,
@@ -10,11 +10,11 @@
   'SPLASH': 1},
  [('PYZ-00.pyz',
    'D:\\College\\5th Semester\\Object-Oriented '
-   'Programming\\TubesPBO\\Main_File\\build\\cliGame\\PYZ-00.pyz',
+   'Programming\\TubesPBO\\Main\\build\\cliGame\\PYZ-00.pyz',
    'PYZ'),
   ('struct',
    'D:\\College\\5th Semester\\Object-Oriented '
-   'Programming\\TubesPBO\\Main_File\\build\\cliGame\\localpycos\\struct.pyo',
+   'Programming\\TubesPBO\\Main\\build\\cliGame\\localpycos\\struct.pyo',
    'PYMODULE'),
   ('pyimod01_os_path',
    'C:\\Users\\alfin\\AppData\\Roaming\\Python\\Python310\\site-packages\\PyInstaller\\loader\\pyimod01_os_path.pyc',
@@ -45,7 +45,7 @@
    'PYSOURCE'),
   ('cliGame',
    'D:\\College\\5th Semester\\Object-Oriented '
-   'Programming\\TubesPBO\\Main_File\\cliGame.py',
+   'Programming\\TubesPBO\\Main\\cliGame.py',
    'PYSOURCE')],
  True,
  False,

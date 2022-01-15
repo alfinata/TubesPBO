@@ -1,6 +1,6 @@
 ([('cliGame.exe',
    'D:\\College\\5th Semester\\Object-Oriented '
-   'Programming\\TubesPBO\\Main_File\\build\\cliGame\\cliGame.exe',
+   'Programming\\TubesPBO\\Main\\build\\cliGame\\cliGame.exe',
    'EXECUTABLE'),
   ('python310.dll', 'C:\\Program Files\\Python310\\python310.dll', 'BINARY'),
   ('VCRUNTIME140.dll',
@@ -37,5 +37,5 @@
    'BINARY'),
   ('base_library.zip',
    'D:\\College\\5th Semester\\Object-Oriented '
-   'Programming\\TubesPBO\\Main_File\\build\\cliGame\\base_library.zip',
+   'Programming\\TubesPBO\\Main\\build\\cliGame\\base_library.zip',
    'DATA')],)
