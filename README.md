@@ -6,9 +6,9 @@ A simple RPG game, you can choose between 3 classes of heroes to fight in the du
 
 Made by:
 
-Rafif Fausta Kusuma Syam (1301190401)
-
 Alfinata Yusuf Sitaba (1301190364)
+
+Rafif Fausta Kusuma Syam (1301190401)
 
 Dindin Inas Candra Wiguna (1301194415)
 
