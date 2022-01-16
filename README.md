@@ -12,4 +12,4 @@ Rafif Fausta Kusuma Syam (1301190401)
 
 Dindin Inas Candra Wiguna (1301194415)
 
-To try the game, download the repository, and run the "Lil' RPG Project.exe" file.
+To try the game, download the repository, go to \Game\dist\cliGame and run the "cliGame.exe" file.
