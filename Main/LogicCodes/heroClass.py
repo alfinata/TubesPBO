@@ -4,7 +4,7 @@ from LogicCodes.consumablesClass import *
 # Class Basic Hero - Alfinata
 class basicHero(basicUnit):
     def __init__(self, name, HP, energy, role, evasion):
-        super().__init__(name, HP, 0, 0, 10, evasion, 5)
+        super().__init__(name, HP, 0, 0, 15, evasion, 5)
         self.energyMax = energy
         self.energyCurrent = self.energyMax
         self.heroRole = role

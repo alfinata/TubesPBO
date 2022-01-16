@@ -18,7 +18,7 @@ class dummyTarget(basicEnemy):
 # Class Slime - Din
 class slime(basicEnemy):
     def __init__(self):
-        super().__init__("Slime", 25, 5, 0, 5, 0, 5)
+        super().__init__("Slime", 30, 6, 0, 5, 0, 5)
     
     def doSomething(self, target):
         self.attackTarget(target)
@@ -26,12 +26,12 @@ class slime(basicEnemy):
 # Class Goblin - Din
 class goblin(basicEnemy):
     def __init__(self):
-        super().__init__("Goblin", 35, 10, 10, 10, 0, 5)
+        super().__init__("Goblin", 40, 12, 10, 8, 0, 5)
     
     def doSomething(self, target):
         if (self.getHPCurrent()/self.getHPMax()) <= 0.5:
             if self.abilityCounter == 0:
-                self.setDEF(self.getDEF() + 15)
+                self.setDEF(self.getDEF() + 20)
                 self.abilityCounter = 1
                 print(f"Goblin senses danger! He increases his defense power to {self.getDEF()}")
             else: 
@@ -42,7 +42,7 @@ class goblin(basicEnemy):
 # Class Skeleton - Din
 class skeleton(basicEnemy):
     def __init__(self):
-        super().__init__("Skeleton", 60, 15, 0, 15, 0, 5)
+        super().__init__("Skeleton", 65, 18, 0, 10, 0, 5)
     
     def doSomething(self, target):
         if (self.getHPCurrent()/self.getHPMax()) <= 1:
@@ -58,21 +58,21 @@ class skeleton(basicEnemy):
 # Class Vampire - Din
 class vampire(basicEnemy):
     def __init__(self):
-        super().__init__("Vampire", 90, 20, 20, 20, 0, 10)
+        super().__init__("Vampire", 100, 24, 20, 15, 10, 10)
     
     def doSomething(self, target):
         whatToDoProc = random.randrange(1, 101)
         if whatToDoProc > 40:
             self.attackTarget(target)
         else:
-            dmgDealt = target.takeDamage(30)
+            dmgDealt = target.takeDamage(24)
             self.healHP(self.getHPMax()/10)
             print(f"Vampire uses Bloodsuck! He dealt {dmgDealt} damage and healed himself to {self.getHPCurrent()}/{self.getHPMax()}")
 
 # Class Demon - Din
 class demon(basicEnemy):
     def __init__(self):
-        super().__init__("Demon", 120, 25, 25, 25, 0, 10)
+        super().__init__("Demon", 125, 27, 25, 20, 0, 10)
     
     def doSomething(self, target):
         if self.abilityCounter == 0:
@@ -89,7 +89,7 @@ class demon(basicEnemy):
 # Class Demon King
 class demonKing(basicEnemy):
     def __init__(self):
-        super().__init__("Demon King", 200, 30, 30, 50, 20, 10)
+        super().__init__("Demon King", 250, 35, 30, 50, 20, 10)
     
     def doSomething(self, target):
         if self.abilityCounter == 0:
@@ -101,9 +101,9 @@ class demonKing(basicEnemy):
             if whatToDoProc == 1:
                 self.attackTarget(target)
             elif whatToDoProc == 2:
-                target.setATK(round(target.getATK() * 0.95, 0))
+                target.setATK(round(target.getATK() * 0.9, 0))
                 print(f"Demon King uses Scare! Hero's attack power has been reduced to {target.getATK()}")
             else:
-                dmgDealt = target.takeDamage(40)
-                self.healHP(round(self.getHPMax()*0.15, 0))
+                dmgDealt = target.takeDamage(35)
+                self.healHP(round(self.getHPMax() * 0.15, 0))
                 print(f"Demon King uses Bloodsuck! He dealt {dmgDealt} damage and healed himself to {self.getHPCurrent()}/{self.getHPMax()}")

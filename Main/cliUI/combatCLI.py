@@ -201,7 +201,7 @@ def gameCombat(inHero, enemy, level, round):
         input("\n<<Press enter to continue>>")
         return 0, inHero
     elif whoWin == 2:
-        moneyNow = int(hero.money*0.8)
+        moneyNow = int(hero.money*0.5)
         inHero.money = moneyNow
         print(f"Oh no! You got beaten by {enemy.getName()}")
         print("======================================")
