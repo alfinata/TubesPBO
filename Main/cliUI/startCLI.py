@@ -54,7 +54,7 @@ def startCLI():
                         print("======================================")
                         print("Game Loaded.")
                         input("\nPress the keys to continue >> ")
-                        gameMenu(objectToOutput.getHero(), objectToOutput.getStageProgress(), objectToOutput.getStoryProgress)
+                        gameMenu(objectToOutput.getHero(), objectToOutput.getStageProgress(), objectToOutput.getStoryProgress())
                         loadStatus = 1
                     else:
                         os.system('cls' if os.name == 'nt' else 'clear')
