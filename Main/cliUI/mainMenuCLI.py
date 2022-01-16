@@ -154,6 +154,8 @@ def gameMenu(hero, stageProgress, storyProgress):
                         input("\nPress enter to leave the inn>> ")
                         i = 1
                     else:
+                        os.system('cls' if os.name == 'nt' else 'clear')
+                        print("=========== TAKE A REST ==============")
                         print("You are currently don't have enough gold.")
                         input("\nPress enter to leave the inn>> ")
                         i = 1
