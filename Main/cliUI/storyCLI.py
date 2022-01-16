@@ -1,5 +1,6 @@
 import time, os
 
+# Story - Alfinata
 def storyStart():
     os.system('cls' if os.name == 'nt' else 'clear')
     print("=============== STORY ================\n")

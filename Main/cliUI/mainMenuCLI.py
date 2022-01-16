@@ -7,7 +7,6 @@ from LogicCodes.enemyClass import *
 from LogicCodes.heroClass import *
 from LogicCodes.saveStateClass import *
 
-
 # CLI Main Menu - Rapip
 def gameMenu(hero, stageProgress, storyProgress):
     exitGameStatus = 0

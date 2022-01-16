@@ -28,7 +28,7 @@ class basicUnit:
     def changeMaxHP(self, newHP):
         currHP = self.__HPCurrent/self.__HPMax
         self.__HPMax = newHP
-        self.__HPCurrent = round(currHP*self.__HPMax, 0)
+        self.__HPCurrent = int(currHP*self.__HPMax)
     
     def getATK(self):
         return self.__ATK
@@ -56,10 +56,10 @@ class basicUnit:
         if evadeProc > target.getEvade():
             critProc = random.randrange(1, 101)
             if critProc < self.critChance:
-                dmgDealt = round(target.takeDamage(self.__ATK*2.5), 0)
+                dmgDealt = int(target.takeDamage(self.__ATK*2.5))
                 print(f"{self.getName()} attacked {target.getName()} and scores a CRITICAL HIT!, dealing {dmgDealt} damage.")
             else:
-                dmgDealt = round(target.takeDamage(self.__ATK), 0)
+                dmgDealt = int(target.takeDamage(self.__ATK))
                 print(f"{self.getName()} attacked {target.getName()}, dealing {dmgDealt} damage.")
         else:
             print(f"Too bad! {target.getName()} completely evaded the attack!")
@@ -67,7 +67,7 @@ class basicUnit:
     def takeDamage(self, value):
         HPnow = self.getHPCurrent()
         damage = value*((100-self.getDEF())/100)
-        HPthen = round(HPnow - damage, 0)
+        HPthen = int(HPnow - damage)
         if HPthen < 0:
             HPthen = 0
         self.setHPCurrent(HPthen)

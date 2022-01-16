@@ -80,7 +80,7 @@ class demon(basicEnemy):
             if whatToDoProc > 50:
                 self.attackTarget(target)
             else:
-                target.setATK(target.getATK() * 0.9)
+                target.setATK(int(target.getATK() * 0.9))
                 self.abilityCounter = 1
                 print(f"Demon uses Scare! Hero's attack power has been reduced to {target.getATK()}")
         else:
@@ -93,7 +93,7 @@ class demonKing(basicEnemy):
     
     def doSomething(self, target):
         if self.abilityCounter == 0:
-            target.setHPCurrent(round(target.getHPCurrent()*0.5, 0))
+            target.setHPCurrent(int(target.getHPCurrent()*0.5))
             print(f"Demon King uses Doom! {target.getName()} loses half of its HP, with only {target.getHPCurrent()}/{target.getHPMax()} HP remaining.")
             self.abilityCounter = 1
         else:
@@ -101,9 +101,9 @@ class demonKing(basicEnemy):
             if whatToDoProc == 1:
                 self.attackTarget(target)
             elif whatToDoProc == 2:
-                target.setATK(round(target.getATK() * 0.9, 0))
+                target.setATK(int(target.getATK() * 0.9, 0))
                 print(f"Demon King uses Scare! Hero's attack power has been reduced to {target.getATK()}")
             else:
                 dmgDealt = target.takeDamage(35)
-                self.healHP(round(self.getHPMax() * 0.15, 0))
+                self.healHP(int(self.getHPMax() * 0.15, 0))
                 print(f"Demon King uses Bloodsuck! He dealt {dmgDealt} damage and healed himself to {self.getHPCurrent()}/{self.getHPMax()}")
