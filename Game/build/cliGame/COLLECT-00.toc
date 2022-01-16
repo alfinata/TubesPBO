@@ -2,10 +2,10 @@
    'D:\\College\\5th Semester\\Object-Oriented '
    'Programming\\TubesPBO\\Main\\build\\cliGame\\cliGame.exe',
    'EXECUTABLE'),
+  ('python310.dll', 'C:\\Program Files\\Python310\\python310.dll', 'BINARY'),
   ('VCRUNTIME140.dll',
    'C:\\Program Files\\Python310\\VCRUNTIME140.dll',
    'BINARY'),
-  ('python310.dll', 'C:\\Program Files\\Python310\\python310.dll', 'BINARY'),
   ('_multiprocessing',
    'C:\\Program Files\\Python310\\DLLs\\_multiprocessing.pyd',
    'EXTENSION'),

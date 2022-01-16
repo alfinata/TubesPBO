@@ -155,6 +155,7 @@ def gameMenu(hero, stageProgress, storyProgress):
                         i = 1
                     else:
                         print("You are currently don't have enough gold.")
+                        input("\nPress enter to leave the inn>> ")
                         i = 1
                 elif optionInput == "2":
                     i = 1
