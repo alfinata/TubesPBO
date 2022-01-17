@@ -57,7 +57,7 @@
  [],
  False,
  False,
- 1642389974,
+ 1642390649,
  [('run.exe',
    'C:\\Users\\alfin\\AppData\\Roaming\\Python\\Python310\\site-packages\\PyInstaller\\bootloader\\Windows-64bit\\run.exe',
    'EXECUTABLE')])

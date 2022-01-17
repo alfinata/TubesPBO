@@ -208,8 +208,8 @@ def gameCombat(inHero, enemy, level, round):
         print("You got unconscious. You then wake up in the town. It seems you managed to stay alive.")
         print(f"But you lose some gold, you now only have {inHero.money} Gold left.")
         print("======================================")
-        inHero.setHPCurrent(hero.getHPMax()*0.2)
-        inHero.energyCurrent = hero.energyMax*0.2
+        inHero.setHPCurrent(int(hero.getHPMax()*0.2))
+        inHero.energyCurrent = int(hero.energyMax*0.2)
         inHero.inventory = hero.inventory
         input("\n<<Press enter to continue>>")
         return 1, inHero
