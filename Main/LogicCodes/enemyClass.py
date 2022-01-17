@@ -65,7 +65,7 @@ class vampire(basicEnemy):
         if whatToDoProc > 40:
             self.attackTarget(target)
         else:
-            dmgDealt = target.takeDamage(24)
+            dmgDealt = int(target.takeDamage(24))
             self.healHP(self.getHPMax()/10)
             print(f"Vampire uses Bloodsuck! He dealt {dmgDealt} damage and healed himself to {self.getHPCurrent()}/{self.getHPMax()}")
 
@@ -101,9 +101,9 @@ class demonKing(basicEnemy):
             if whatToDoProc == 1:
                 self.attackTarget(target)
             elif whatToDoProc == 2:
-                target.setATK(int(target.getATK() * 0.9, 0))
+                target.setATK(int(target.getATK() * 0.9))
                 print(f"Demon King uses Scare! Hero's attack power has been reduced to {target.getATK()}")
             else:
                 dmgDealt = target.takeDamage(35)
-                self.healHP(int(self.getHPMax() * 0.15, 0))
+                self.healHP(int(self.getHPMax() * 0.15))
                 print(f"Demon King uses Bloodsuck! He dealt {dmgDealt} damage and healed himself to {self.getHPCurrent()}/{self.getHPMax()}")

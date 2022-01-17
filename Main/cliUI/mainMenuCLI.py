@@ -35,7 +35,9 @@ def gameMenu(hero, stageProgress, storyProgress):
                 print("============= DUNGEON ================")
                 print("Dungeon stage selection:")
                 for stage in range(stageProgress):
-                    if stage <= 7:
+                    if stage == 8:
+                        pass
+                    elif stage <= 7:
                         print(f"{stage+1}. Stage {stage+1}")
                 print("8. Exit Dungeon")
                 stageInput = input("\nPress the keys to continue >> ")
